@@ -12,8 +12,9 @@ type TrackListProps = {
 
 export class TrackList extends React.Component <TrackListProps, {}> {
     render() {
-
-        const trackList = this.props.tracks.map(track => <Track key={track.id} track={track} onAdd={this.props.onAdd} onRemove={this.props.onRemove} isRemoval={this.props.isRemoval}/>);
+        const tracks = this.props.tracks;
+        console.log(tracks);
+        const trackList = tracks.map(track => <Track key={track.id} track={track} onAdd={this.props.onAdd} onRemove={this.props.onRemove} isRemoval={this.props.isRemoval}/>);
 
         return(
             <div className="TrackList">
